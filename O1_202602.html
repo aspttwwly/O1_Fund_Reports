@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O1 科技增强型基金 2026年2月运作报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff; 
+        }
+        .header { text-align: center; border-bottom: 2px solid #1a365d; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { margin: 0; color: #1a365d; font-size: 26px; letter-spacing: 2px; }
+        .header .subtitle { color: #666; font-size: 14px; margin-top: 5px; text-transform: uppercase; }
+        .report-info { margin-top: 10px; font-size: 12px; color: #888; }
+        
+        .section-title { 
+            border-left: 4px solid #1a365d; padding-left: 12px; margin-top: 40px; margin-bottom: 20px; 
+            color: #2c3e50; font-size: 20px; font-weight: bold; background: linear-gradient(to right, #f4f6f9, #fff);
+            padding-top: 8px; padding-bottom: 8px;
+        }
+        
+        .kpi-container { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;}
+        .kpi-card { 
+            flex: 1; min-width: 140px; background: #f8f9fa; padding: 15px 10px; border-radius: 6px; text-align: center; 
+            border: 1px solid #e9ecef; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .kpi-value { font-size: 22px; font-weight: bold; color: #d62728; margin: 5px 0; }
+        .kpi-label { font-size: 12px; color: #7f8c8d; }
+        .positive { color: #d62728; }
+        .safe { color: #2ca02c; }
+        
+        .chart-wrapper { width: 100%; height: 350px; margin: 20px 0; border: 1px solid #eee; border-radius: 4px; padding: 10px; box-sizing: border-box; }
+        .chart-caption { text-align: center; font-size: 12px; color: #999; margin-bottom: 20px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { padding: 10px; text-align: right; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; color: #333; font-weight: 600; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        
+        .holding-table th, .holding-table td { text-align: center; font-size: 12px; }
+        .holding-table th { background-color: #eef2f5; }
+        
+        .analysis-text { text-align: justify; margin-bottom: 12px; font-size: 15px; color: #444; }
+        .highlight { color: #d62728; font-weight: bold; }
+        
+        .footer { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; }
+        .logo-container { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 5px; }
+        .logo-text { font-family: "Times New Roman", "Songti SC", serif; font-size: 20px; font-weight: bold; color: #333; margin-left: 8px; }
+        
+        @media print { body { padding: 0; } .chart-wrapper { page-break-inside: avoid; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>O1 科技增强型基金 2026年2月运作报告</h1>
+        <div class="subtitle">O1 Tech Enhanced Fund Monthly Report - Feb 2026</div>
+        <div class="report-info">报告区间：2026-02-01 至 2026-02-28</div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <div class="kpi-label">2026年2月收益</div>
+            <div class="kpi-value positive">+2.82%</div> 
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">最新净值 (NAV)</div>
+            <div class="kpi-value">1.5545</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">月度最大回撤</div>
+            <div class="kpi-value safe">-1.21%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">年化波动率 (Est.)</div>
+            <div class="kpi-value">10.87%</div>
+        </div>
+    </div>
+
+    <div class="section-title">一、 2月市场回顾与策略复盘</div>
+    
+    <p class="analysis-text">
+        2026年2月，市场交易的主线围绕“关税扰动”与“避险情绪升温”展开。我们在上期报告中明确提出的<strong>“追求高夏普、顺势进攻”</strong>以及<strong>“适度释放国债流动性捕捉弹性”</strong>的战略转向，在本月的实盘运作中得到了超预期的验证。
+    </p>
+    <ul class="analysis-text">
+        <li><strong>精准的“纪律性抄底”：</strong> 1月底至2月初，受外围情绪影响，华夏黄金（518850）在前期单边逼空后出现了一次短暂急跌（最低探至10.05元一线）。这恰好触发了我们量化系统设定的再平衡买点。我们坚决克服了市场恐慌，逆势完成了调仓增配。</li>
+        <li><strong>避险资产的V型修复：</strong> 随后，受全球最大黄金ETF连续增持等多重利好催化，黄金价格迅速企稳并逼近前高。这次低位筹码的获取，不仅消化了初期的震荡浮亏，更为组合全月创造了 +2.82% 的超额收益。</li>
+    </ul>
+
+    <div id="chartNAV" class="chart-wrapper"></div>
+    <div class="chart-caption">图1：2026年2月 O1基金净值 vs 核心成分走势 (以2月初归一化)</div>
+
+    <div class="section-title">二、 透明与纪律：历史仓位演变</div>
+    
+    <p class="analysis-text">
+        通过回顾过去两个月的仓位轨迹，可以清晰地看到O1组合是如何将“宏观研判”转化为“量化纪律”的。我们在2月初利用国债的安全垫，精准承接了黄金的下跌动能。（注：为保护当前策略的隐蔽性，2月末最新自然权重暂不对外披露。）
+    </p>
+    
+    <div style="overflow-x: auto;">
+        <table class="holding-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">状态节点</th>
+                    <th>十年国债<br>511260</th>
+                    <th>华夏黄金<br>518850</th>
+                    <th>中证500<br>510500</th>
+                    <th>恒生ETF<br>159920</th>
+                    <th>恒生科技<br>513580</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left; font-weight:bold; color:#666;">2025年末 初始底仓</td>
+                    <td>50.00%</td>
+                    <td>15.70%</td>
+                    <td>11.29%</td>
+                    <td>15.75%</td>
+                    <td>7.25%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; font-weight:bold; color:#444;">2026/1/30 市场自然漂移</td>
+                    <td>47.0%</td>
+                    <td>17.8%</td>
+                    <td>12.0%</td>
+                    <td>16.0%</td>
+                    <td>7.1%</td>
+                </tr>
+                <tr style="background-color: #fff3cd;">
+                    <td style="text-align: left; font-weight:bold; color:#d62728;">🔥 2月初 主动再平衡 (纪律增配)</td>
+                    <td style="color:#d62728;">40.00% ↓</td>
+                    <td style="font-weight:bold; color:#d62728;">22.40% ↑</td>
+                    <td>12.24%</td>
+                    <td>13.60%</td>
+                    <td>11.76%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; font-weight:bold; color:#1a365d;">2026/2/28 最新权重</td>
+                    <td colspan="5" style="letter-spacing: 2px;">🔒 保护期内，暂不披露最新持仓比例</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-title">三、 资产深度剖析与后续展望</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left;">资产类别</th>
+                <th>标的代码</th>
+                <th>2月市场走势特征</th>
+                <th>策略应对与评价</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight: bold;">贵金属</td>
+                <td>华夏黄金 (518850)</td>
+                <td>月初急跌下探，中下旬受避险情绪驱动稳步走强，快速修复逼近11.0元。</td>
+                <td><span class="highlight">核心增益源。</span>在最恐慌的回调深处完成增配，完美捕捉了反弹波段。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">A股成长</td>
+                <td>中证500 (510500)</td>
+                <td>高位宽幅震荡，月底发力向上突破。</td>
+                <td><span class="highlight">稳健持仓。</span>顺应复苏逻辑，但对拥挤交易保持警惕。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">固定收益</td>
+                <td>十年国债 (511260)</td>
+                <td>全月稳健向上，盘中频现大规模主力资金吞吐。</td>
+                <td><span style="color:#2ca02c;">流动性枢纽。</span>按计划减持释放流动性，输送了关键的逆势加仓“弹药”。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">港股蓝筹科技</td>
+                <td>159920 / 513580</td>
+                <td>企稳筑底，小幅波动。</td>
+                <td>底层Alpha支撑，提供分散化配置效果，本月亦作了小幅战术补充。</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="analysis-text" style="background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #1a365d; margin-top: 20px;">
+        <p><strong>展望3月：【守正出奇，动态跟随】</strong></p>
+        <p>随着各类资产趋势性的进一步明确，部分赛道（如中证500）的分歧正在加大。我们将利用模型密切监控各资产的波动率指标与资金流向，防范动量崩溃风险。下阶段将进入“观察与微调”周期，依托系统发出的客观信号进行战术级别的高抛低吸，稳固前期累积的超额收益。</p>
+    </div>
+
+    <div class="section-title">四、 历史业绩与净值走势</div>
+    
+    <p class="analysis-text">
+        自2024年5月31日基金成立以来，O1科技增强组合经历了A股的底部震荡、海外地缘的反复扰动以及各类资产的剧烈轮动，但凭借**“国债打底、权益与商品进攻”**的全天候量化配置模型，组合始终保持着稳健向上的生命力。
+    </p>
+    <p class="analysis-text">
+        截至 2026年2月27日，组合累计净值达到 <strong class="highlight">1.5545</strong>，累计资金收益率达到 <strong class="highlight">44.77%</strong>。在过去近两年的运作中，系统数次通过客观的“再平衡纪律”克服了极端情绪下人性的追涨杀跌，不仅有效控制了最大回撤，更把握住了黄金飙升及A股反弹等主线红利，实现了真正意义上穿越周期的长期复利累积。
+    </p>
+
+    <div id="chartHistory" class="chart-wrapper"></div>
+    <div class="chart-caption">图2：O1基金成立以来累计净值与收益率走势 (2024/05 - 2026/02)</div>
+
+    <div class="footer">
+        <div class="logo-container">
+            <div class="logo-text">O1 基金管理团队</div>
+        </div>
+        <div class="logo-subtext">O1 Fund Management - Quantitative Desk</div>
+        <div style="font-size: 12px; color: #999; margin-top: 5px;">报告生成日期: 2026年2月28日</div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 图表 1：2月份走势对比数据
+        // ==========================================
+        const dates_feb = ['02/02', '02/03', '02/04', '02/05', '02/06', '02/09', '02/10', '02/11', '02/12', '02/13', '02/24', '02/25', '02/26', '02/27'];
+        const raw_fund  = [1.5119, 1.534, 1.5483, 1.5361, 1.5296, 1.5501, 1.549, 1.5539, 1.5525, 1.5437, 1.5529, 1.5557, 1.5496, 1.5545]; 
+        const raw_gold  = [10.053, 10.501, 10.95, 10.613, 10.446, 10.804, 10.761, 10.841, 10.807, 10.661, 11.042, 11.045, 11.005, 11.02]; 
+        const raw_csi   = [8.049, 8.366, 8.388, 8.217, 8.213, 8.395, 8.377, 8.411, 8.514, 8.373, 8.469, 8.602, 8.63, 8.737]; 
+        const raw_bond  = [134.8, 134.78, 134.732, 134.916, 135.027, 135.085, 135.116, 135.204, 135.308, 135.258, 135.247, 135.031, 134.851, 135.001]; 
+
+        function normalize(arr) {
+            return arr.map(v => Number((v / arr[0]).toFixed(4)));
+        }
+
+        const nav_fund = normalize(raw_fund);
+        const n_gold = normalize(raw_gold);
+        const n_csi = normalize(raw_csi);
+        const n_bond = normalize(raw_bond);
+
+        const chartNAV = echarts.init(document.getElementById('chartNAV'));
+        chartNAV.setOption({
+            tooltip: { 
+                trigger: 'axis',
+                formatter: function (params) {
+                    let res = params[0].name + '<br/>';
+                    params.forEach(item => {
+                        let val = ((item.value - 1) * 100).toFixed(2);
+                        let color = val >= 0 ? '#d62728' : 'green';
+                        res += item.marker + item.seriesName + ': <span style="color:'+color+'">' + (val>0?'+':'') + val + '%</span><br/>';
+                    });
+                    return res;
+                }
+            },
+            legend: { data: ['O1 基金净值', '黄金(518850)', '中证500', '国债'], bottom: 0 },
+            grid: { left: '3%', right: '4%', bottom: '10%', top: '5%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: dates_feb },
+            yAxis: { type: 'value', scale: true, axisLabel: { formatter: function(v){ return ((v-1)*100).toFixed(2) + '%'; } } },
+            series: [
+                { name: 'O1 基金净值', type: 'line', data: nav_fund, smooth: true, lineStyle: { width: 4, color: '#1a365d' }, symbol: 'none', z: 10 },
+                { name: '黄金(518850)', type: 'line', data: n_gold, smooth: true, lineStyle: { width: 2, color: '#f1c40f' }, symbol: 'none' },
+                { name: '中证500', type: 'line', data: n_csi, smooth: true, lineStyle: { width: 1, color: '#1f77b4', type: 'dashed' }, symbol: 'none' },
+                { name: '国债', type: 'line', data: n_bond, smooth: true, lineStyle: { width: 1, color: '#2ca02c', type: 'dotted' }, symbol: 'none' }
+            ]
+        });
+
+        // ==========================================
+        // 图表 2：历史真实周度数据走势 (2024.05.31 - 2026.02.27)
+        // ==========================================
+        const dates_history = ['2024-05-31', '2024-06-07', '2024-06-14', '2024-06-21', '2024-06-28', '2024-07-05', '2024-07-12', '2024-07-19', '2024-07-26', '2024-08-02', '2024-08-09', '2024-08-16', '2024-08-23', '2024-08-30', '2024-09-06', '2024-09-13', '2024-09-20', '2024-09-27', '2024-10-11', '2024-10-18', '2024-10-25', '2024-11-01', '2024-11-08', '2024-11-15', '2024-11-22', '2024-11-29', '2024-12-06', '2024-12-13', '2024-12-20', '2024-12-27', '2025-01-03', '2025-01-10', '2025-01-17', '2025-01-24', '2025-02-07', '2025-02-14', '2025-02-21', '2025-02-28', '2025-03-07', '2025-03-14', '2025-03-21', '2025-03-28', '2025-04-04', '2025-04-11', '2025-04-18', '2025-04-25', '2025-04-30', '2025-05-09', '2025-05-16', '2025-05-23', '2025-05-30', '2025-06-06', '2025-06-13', '2025-06-20', '2025-06-27', '2025-07-04', '2025-07-11', '2025-07-18', '2025-07-25', '2025-08-01', '2025-08-08', '2025-08-15', '2025-08-22', '2025-08-29', '2025-09-05', '2025-09-12', '2025-09-19', '2025-09-26', '2025-10-10', '2025-10-17', '2025-10-24', '2025-10-31', '2025-11-07', '2025-11-14', '2025-11-21', '2025-11-28', '2025-12-05', '2025-12-12', '2025-12-19', '2025-12-26', '2026-01-02', '2026-01-09', '2026-01-16', '2026-01-23', '2026-01-30', '2026-02-06', '2026-02-13', '2026-02-27'];
+        const nav_history = [1.0, 1.0022, 1.0087, 1.0125, 1.0093, 1.0126, 1.02, 1.0263, 1.0229, 1.0287, 1.0245, 1.0366, 1.0427, 1.0475, 1.0429, 1.0503, 1.0663, 1.1398, 1.1614, 1.1717, 1.1746, 1.1705, 1.196, 1.1678, 1.1722, 1.189, 1.1929, 1.1965, 1.1953, 1.1979, 1.1961, 1.1944, 1.1929, 1.1936, 1.1964, 1.2069, 1.2088, 1.2172, 1.2117, 1.201, 1.2163, 1.2291, 1.2263, 1.2483, 1.2464, 1.2376, 1.2403, 1.2646, 1.2842, 1.2694, 1.2588, 1.2577, 1.2619, 1.2617, 1.257, 1.2691, 1.277, 1.2825, 1.2838, 1.2892, 1.2989, 1.3094, 1.332, 1.3402, 1.3308, 1.3283, 1.3315, 1.3503, 1.3486, 1.3484, 1.352, 1.3654, 1.3813, 1.3787, 1.3807, 1.386, 1.3917, 1.4116, 1.4158, 1.4338, 1.4385, 1.4429, 1.4589, 1.4705, 1.5119, 1.5296, 1.5437, 1.5545];
+        const ret_history = [0.0, 0.22, 0.87, 1.25, 0.93, 1.26, 2.0, 2.63, 2.29, 2.87, 2.45, 3.66, 4.27, 4.75, 4.29, 5.03, 6.63, 13.98, 16.14, 17.17, 17.46, 17.05, 19.6, 16.78, 17.22, 18.9, 19.29, 19.65, 19.53, 19.79, 19.61, 19.44, 19.29, 19.36, 19.64, 20.69, 20.88, 21.72, 21.17, 20.1, 21.63, 22.91, 22.63, 24.83, 24.64, 23.76, 24.03, 26.46, 28.42, 26.94, 25.88, 25.77, 26.19, 26.17, 25.7, 26.91, 27.7, 28.25, 28.38, 28.92, 29.89, 30.94, 33.2, 34.02, 33.08, 32.83, 33.15, 35.03, 34.86, 34.84, 35.2, 36.54, 38.13, 37.87, 38.07, 38.6, 39.17, 41.16, 41.58, 43.38, 43.85, 44.29, 45.89, 47.05, 41.96, 43.14, 44.07, 44.77];
+
+        const chartHistory = echarts.init(document.getElementById('chartHistory'));
+        chartHistory.setOption({
+            tooltip: { 
+                trigger: 'axis',
+                formatter: function (params) {
+                    let res = params[0].name + '<br/>';
+                    res += params[0].marker + '累计净值: ' + params[0].value.toFixed(4) + '<br/>';
+                    res += params[1].marker + '累计收益率: <span style="color:#d62728">' + params[1].value.toFixed(2) + '%</span>';
+                    return res;
+                }
+            },
+            legend: { data: ['累计净值', '累计收益率(%)'], bottom: 0 },
+            grid: { left: '4%', right: '5%', bottom: '10%', top: '10%', containLabel: true },
+            xAxis: { 
+                type: 'category', 
+                boundaryGap: false, 
+                data: dates_history,
+                axisLabel: {
+                    formatter: function (value) {
+                        return value.substring(0, 7); // 显示到月份 YYYY-MM
+                    }
+                }
+            },
+            yAxis: [
+                { 
+                    type: 'value', 
+                    name: '净值',
+                    min: 'dataMin',
+                    scale: true,
+                    axisLabel: { formatter: '{value}' }
+                },
+                { 
+                    type: 'value', 
+                    name: '收益率',
+                    scale: true,
+                    axisLabel: { formatter: '{value} %' },
+                    splitLine: { show: false } // 隐藏右轴网格线使图表整洁
+                }
+            ],
+            dataZoom: [
+                { type: 'inside', start: 0, end: 100 }, // 允许鼠标缩放查看历史细节
+                { start: 0, end: 100, height: 15, bottom: '5%' }
+            ],
+            series: [
+                { 
+                    name: '累计净值', 
+                    type: 'line', 
+                    data: nav_history, 
+                    smooth: true, 
+                    lineStyle: { width: 3, color: '#1a365d' }, 
+                    itemStyle: { color: '#1a365d' },
+                    symbol: 'none',
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(26,54,93,0.3)' },
+                            { offset: 1, color: 'rgba(26,54,93,0.05)' }
+                        ])
+                    }
+                },
+                { 
+                    name: '累计收益率(%)', 
+                    type: 'line', 
+                    yAxisIndex: 1,
+                    data: ret_history, 
+                    smooth: true, 
+                    lineStyle: { width: 2, color: '#d62728', type: 'dashed' }, 
+                    itemStyle: { color: '#d62728' },
+                    symbol: 'none'
+                }
+            ]
+        });
+
+        window.addEventListener('resize', function() {
+            chartNAV.resize();
+            chartHistory.resize();
+        });
+    </script>
+</body>
+</html>

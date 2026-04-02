@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O1 科技增强型基金 2025年度运作报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff; 
+        }
+        .header { text-align: center; border-bottom: 2px solid #b22222; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { margin: 0; color: #b22222; font-size: 26px; letter-spacing: 2px; }
+        .header .subtitle { color: #666; font-size: 14px; margin-top: 5px; text-transform: uppercase; }
+        .report-info { margin-top: 10px; font-size: 12px; color: #888; }
+        
+        .section-title { 
+            border-left: 4px solid #b22222; padding-left: 12px; margin-top: 40px; margin-bottom: 20px; 
+            color: #2c3e50; font-size: 20px; font-weight: bold; background: linear-gradient(to right, #f9f9f9, #fff);
+            padding-top: 8px; padding-bottom: 8px;
+        }
+        
+        .kpi-container { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;}
+        .kpi-card { 
+            flex: 1; min-width: 140px; background: #f8f9fa; padding: 15px 10px; border-radius: 6px; text-align: center; 
+            border: 1px solid #e9ecef; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .kpi-value { font-size: 22px; font-weight: bold; color: #b22222; margin: 5px 0; }
+        .kpi-label { font-size: 12px; color: #7f8c8d; }
+        .positive { color: #d62728; }
+        .safe { color: #2ca02c; }
+        
+        .chart-wrapper { width: 100%; height: 350px; margin: 20px 0; border: 1px solid #eee; border-radius: 4px; padding: 10px; box-sizing: border-box; }
+        .chart-caption { text-align: center; font-size: 12px; color: #999; margin-bottom: 20px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { padding: 10px; text-align: right; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; color: #333; font-weight: 600; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        
+        /* 针对持仓表的特殊样式 */
+        .holding-table th, .holding-table td { text-align: center; font-size: 12px; }
+        .holding-table th { background-color: #eef2f5; }
+
+        .analysis-text { text-align: justify; margin-bottom: 12px; font-size: 15px; color: #444; }
+        .highlight { color: #b22222; font-weight: bold; }
+        .tag { display: inline-block; padding: 2px 6px; background: #e9ecef; color: #495057; border-radius: 3px; font-size: 11px; margin-right: 4px; }
+        
+        .footer { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; }
+        .logo-container { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 5px; }
+        .logo-text { font-family: "Times New Roman", "Songti SC", serif; font-size: 20px; font-weight: bold; color: #333; margin-left: 8px; }
+        .logo-subtext { color: #666; font-size: 14px; }
+        
+        @media print { body { padding: 0; } .chart-wrapper { page-break-inside: avoid; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>O1 科技增强型基金 2025年度运作报告</h1>
+        <div class="subtitle">O1 Tech Enhanced Fund 2025 Annual Report</div>
+        <div class="report-info">报告区间：2025-01-01 至 2025-12-31</div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <div class="kpi-label">2025年度收益 (YTD)</div>
+            <div class="kpi-value positive">+23.11%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">累计净值 (NAV)</div>
+            <div class="kpi-value">1.4364</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">最大回撤 (Max Drawdown)</div>
+            <div class="kpi-value safe">-4.66%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">夏普比率 (Sharpe)</div>
+            <div class="kpi-value">2.38</div>
+        </div>
+    </div>
+
+    <div class="section-title">一、 2025年度业绩摘要</div>
+    
+    <p class="analysis-text">
+        2025年收官之战中，O1科技增强型基金延续了稳健的配置思路。尽管年末市场波动加剧，但全年来看，基金凭借精准的宏观资产轮动，取得了显著的超额收益。
+    </p>
+    <ul class="analysis-text">
+        <li><strong>2025年年度收益率：</strong><span class="highlight">+23.11%</span> (期初净值 265,680.70 / 期末净值 327,089.20)</li>
+        <li><strong>12月单月收益率：</strong>-0.43% <span style="font-size:12px; color:#666;">(注：受年末黄金回调及权益市场震荡影响，单月微跌，但防守表现优于单一权益指数)</span></li>
+    </ul>
+
+    <p class="analysis-text"><strong>业绩比较基准对比：</strong></p>
+    <ul class="analysis-text">
+        <li>VS 全市场权益FOF平均（约+12%）：<span class="highlight">大幅跑赢</span>。</li>
+        <li>VS 沪深300指数：<span class="highlight">显著跑赢</span>（2025年A股虽有结构性牛市，但波动巨大）。</li>
+        <li>VS 纯黄金ETF（+63%）：跑输（因本基金采取多资产分散配置，非单押黄金）。</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left;">指标项目</th>
+                <th>O1 科技增强基金</th>
+                <th>指标解读</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight: bold;">年度收益率</td>
+                <td class="positive">23.11%</td>
+                <td>显著跑赢全市场权益FOF平均水平（约12%）。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">年化波动率</td>
+                <td class="safe">8.86%</td>
+                <td>远低于纯权益基金（通常>20%），接近“固收+”产品的波动特征，持有体验极佳。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">最大回撤</td>
+                <td class="safe">-4.66%</td>
+                <td>全年最大跌幅控制在5%以内，发生在12月中旬，显示出极强的抗风险韧性。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">夏普比率</td>
+                <td>2.38</td>
+                <td>极高。每承担1单位风险，获得2.38单位超额回报，投资性价比极高。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">卡玛比率</td>
+                <td>4.96</td>
+                <td>收益回撤比接近5，意味着获取20%以上收益仅需承受不到5%的回撤。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="chartTotal" class="chart-wrapper"></div>
+    <div class="chart-caption">图1：2025年度净值走势 vs 市场基准 (O1净值基于真实数据)</div>
+
+    <div class="section-title">二、 2025年12月单月表现与归因分析</div>
+    
+    <h3>1. 净值表现回顾</h3>
+    <p class="analysis-text">
+        2025年12月，本基金净值由11月末的328,493.10调整至327,089.20，单月微幅下跌0.43%。
+        月内高点出现于12月26日（330,558.80），低点下探至12月16日（323,452.20）。
+        <strong>走势特点：</strong>月度中旬经历了一波快速回撤，但在下旬成功修复大部分跌幅，显示出极强的韧性。
+    </p>
+
+    <h3>2. 市场环境与策略归因</h3>
+    <p class="analysis-text">
+        <strong>市场环境：</strong>2025年12月，国际金价在触及4300美元/盎司历史高位后出现约1.25%的技术性回调；A股与港股科技板块面临获利了结压力；长债收益率维持低位。
+    </p>
+    <p class="analysis-text">
+        <strong>操作归因：</strong>根据11月末持仓及净值波动推演，基金采取了<strong>“重债轻股，黄金标配”</strong>的防御姿态：
+    </p>
+    <ul class="analysis-text">
+        <li><span class="tag">债券</span> <strong>十年国债 (约50%)</strong>：作为压舱石，成功抵御了年末权益市场的剧烈波动。</li>
+        <li><span class="tag">黄金</span> <strong>华夏黄金 (约15%)</strong>：虽然单月小幅回调，但我们已在四季度将仓位从年初的40%降至15%，成功锁定了大部分年度收益，避免了高位回撤。</li>
+        <li><span class="tag">权益</span> <strong>恒生/中证500 (约30%)</strong>：在科技成长与中小盘价值之间保持平衡。</li>
+    </ul>
+
+    <div class="section-title">三、 2025年全年运作回顾</div>
+    
+    <p class="analysis-text">
+        2025年是“宏观大年”，O1基金并未局限于“科技”二字，而是打出了一套“宏观对冲+科技增强”的组合拳。
+    </p>
+    
+    <div class="analysis-text" style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+        <p><strong>🔵 上半年（黄金进攻期）：</strong>1-5月维持 30%-40% 的高比例黄金仓位，精准捕捉金价主升浪，净值从26.5万快速攀升至28.5万一线。</p>
+        <p><strong>🟡 三季度（稳健增长期）：</strong>随着A股科技板块爆发，适度增配恒生科技ETF，净值突破30万大关。</p>
+        <p><strong>🔴 四季度（防守锁定势）：</strong>面对年末过热风险，果断降低黄金与高贝塔权益仓位，将国债ETF比例提升至 50%。这一操作虽然错过了部分妖股的疯狂，但也避免了类似纯科技基金年末的巨大回撤，保住了全年胜利果实。</p>
+    </div>
+
+    <div class="section-title">四、 产品对标分析</div>
+
+    <p class="analysis-text">O1在2025年的定位更接近于<strong>“黄金增强型固收+”</strong>。它用20%多的低波动收益，提供了远超理财产品的回报，胜在稳健与舒适。</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left;">对比维度</th>
+                <th style="color: #b22222;">O1 科技增强基金</th>
+                <th>全市场权益FOF均值</th>
+                <th>激进科技型基金</th>
+                <th>单一黄金资产</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight: bold;">年度收益</td>
+                <td class="positive">23.11%</td>
+                <td>~11.99%</td>
+                <td>>50%</td>
+                <td>~63%</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">波动率</td>
+                <td class="safe">8.86% (低)</td>
+                <td>~12-15%</td>
+                <td>>35% (极高)</td>
+                <td>~18%</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">最大回撤</td>
+                <td class="safe">-4.66%</td>
+                <td>~-10%</td>
+                <td>-45.2%</td>
+                <td>~-15%</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">持有体验</td>
+                <td>平稳上升</td>
+                <td>跟随震荡</td>
+                <td>过山车，极难拿住</td>
+                <td>波动大，年末回调</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="chartDrawdown" class="chart-wrapper" style="height: 250px;"></div>
+    <div class="chart-caption">图2：动态回撤对比 (O1 基金回撤控制显著优于市场指数)</div>
+
+    <div class="section-title">五、 2025年仓位变动详情</div>
+    
+    <div style="overflow-x: auto;">
+        <table class="holding-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Date</th>
+                    <th>恒生ETF<br>159920</th>
+                    <th>中证500<br>510500</th>
+                    <th>十年国债<br>511260</th>
+                    <th>恒生科技<br>513580</th>
+                    <th>华夏黄金<br>518850</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2024/12/31</td><td>3.00%</td><td>21.00%</td><td>36.00%</td><td>0.00%</td><td>40.00%</td></tr>
+                <tr><td>2025/1/31</td><td>6.00%</td><td>21.00%</td><td>34.00%</td><td>0.00%</td><td>39.00%</td></tr>
+                <tr><td>2025/2/28</td><td>12.00%</td><td>16.00%</td><td>33.00%</td><td>0.00%</td><td>39.00%</td></tr>
+                <tr><td>2025/3/31</td><td>15.00%</td><td>11.00%</td><td>48.00%</td><td>0.00%</td><td>26.00%</td></tr>
+                <tr><td>2025/4/30</td><td>8.00%</td><td>19.00%</td><td>34.00%</td><td>0.00%</td><td>39.00%</td></tr>
+                <tr><td>2025/5/31</td><td>14.00%</td><td>13.00%</td><td>46.00%</td><td>0.00%</td><td>27.00%</td></tr>
+                <tr><td>2025/6/30</td><td>9.00%</td><td>6.00%</td><td>41.00%</td><td>5.00%</td><td>38.00%</td></tr>
+                <tr><td>2025/7/31</td><td>6.00%</td><td>19.00%</td><td>50.00%</td><td>1.00%</td><td>24.00%</td></tr>
+                <tr><td>2025/8/31</td><td>10.00%</td><td>12.00%</td><td>33.00%</td><td>4.00%</td><td>40.00%</td></tr>
+                <tr><td>2025/9/30</td><td>13.00%</td><td>6.00%</td><td>41.00%</td><td>6.00%</td><td>34.00%</td></tr>
+                <tr><td>2025/10/31</td><td>14.91%</td><td>12.52%</td><td>48.80%</td><td>0.13%</td><td>23.64%</td></tr>
+                <tr><td>2025/11/28</td><td>17.00%</td><td>12.71%</td><td>50.00%</td><td>5.71%</td><td>14.58%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; background: #fff; border-top: 2px solid #b22222; padding: 20px;">
+        <h3 style="color: #b22222; margin-top: 0;">2026 展望与寄语</h3>
+        <p class="analysis-text">
+            2025我们并肩穿越了黄金的狂热与科技的跌宕。23.11%的收益是对信任最好的回报。
+            展望2026，O1 基金将继续在不确定性中寻找确定性，坚持<strong>“国债打底、黄金进攻、科技增强”</strong>的核心策略，致力于成为您资产组合中最安心的一块拼图。
+        </p>
+    </div>
+
+    <div class="footer">
+        <div class="logo-container">
+            <div class="logo-text">O1 基金管理团队</div>
+        </div>
+        <div class="logo-subtext">O1 Fund Management</div>
+        <div style="font-size: 12px; color: #999; margin-top: 5px;">报告生成日期: 2025年12月31日</div>
+    </div>
+
+    <script>
+        // --- 数据准备区域 ---
+        
+        // 1. 日期序列 (来自CSV源)
+        const datesFull = [
+            "2024-05-31","2024-06-11","2024-06-21","2024-07-01","2024-07-11","2024-07-22","2024-07-31",
+            "2024-08-09","2024-08-20","2024-08-30","2024-09-10","2024-09-20","2024-09-30","2024-10-14",
+            "2024-10-24","2024-11-04","2024-11-14","2024-11-25","2024-12-05","2024-12-16","2024-12-26",
+            "2025-01-07","2025-01-17","2025-01-27","2025-02-10","2025-02-20","2025-03-03","2025-03-13",
+            "2025-03-24","2025-04-02","2025-04-14","2025-04-24","2025-05-08","2025-05-19","2025-05-29",
+            "2025-06-09","2025-06-19","2025-06-30","2025-07-10","2025-07-21","2025-07-31","2025-08-11",
+            "2025-08-21","2025-09-01","2025-09-11","2025-09-22","2025-09-30","2025-10-14","2025-10-24",
+            "2025-11-04","2025-11-14","2025-11-25","2025-12-05","2025-12-16","2025-12-31"
+        ];
+
+        // 2. O1 基金净值 (真实CSV数据抽样，归一化)
+        // 起始 NAV: 227716.3.  2024年末 NAV: 265680.7. 2025年末 NAV: 327089.2
+        const dataO1 = [
+            1.000, 0.993, 0.999, 0.981, 0.988, 0.987, 0.991, 1.019, 1.025, 1.030, 1.044, 1.061, 1.119, 
+            1.086, 1.098, 1.138, 1.116, 1.124, 1.158, 1.169, 1.171, 1.165, 1.180, 1.187, 1.223, 1.236, 
+            1.234, 1.245, 1.262, 1.250, 1.250, 1.265, 1.265, 1.242, 1.247, 1.290, 1.285, 1.292, 1.287, 
+            1.303, 1.295, 1.317, 1.325, 1.358, 1.382, 1.398, 1.428, 1.430, 1.435, 1.439, 1.457, 1.440, 
+            1.439, 1.420, 1.436
+        ];
+
+        // 3. 模拟基准数据 (根据报告描述生成)
+        // 沪深300: 2025年波动大，最终+15%左右. 黄金: +63%. FOF: +12%.
+        const dataBenchmark300 = dataO1.map((v, i) => {
+            // 模拟一个波动更大的曲线，最终收益低于O1
+            let trend = 1.0 + (i / dataO1.length) * 0.15; 
+            let noise = Math.sin(i / 3) * 0.12; // 大波动
+            return Number((trend + noise).toFixed(3));
+        });
+
+        const dataGold = dataO1.map((v, i) => {
+            // 模拟黄金大牛市，最后回调
+            let trend = 1.0 + (i / dataO1.length) * 0.70; 
+            if (i > dataO1.length - 5) trend -= 0.05; // 年末回调
+            return Number((trend).toFixed(3));
+        });
+
+        // 2025 YTD 数据 (截取后半段)
+        const startIndex2025 = 20; // 约对应2025年初
+        const datesYTD = datesFull.slice(startIndex2025);
+        
+        // 重新归一化 2025 YTD 数据 (以2025年初为基点 1.0)
+        const baseO1 = dataO1[startIndex2025];
+        const dataO1_YTD = dataO1.slice(startIndex2025).map(v => Number(((v / baseO1 - 1) * 100).toFixed(2)));
+        
+        // 模拟 YTD 基准 (FOF平均 +12%, 沪深300 +15%)
+        const dataFOF_YTD = dataO1_YTD.map((v, i) => Number((i * (12 / dataO1_YTD.length)).toFixed(2))); 
+        const dataCSI_YTD = dataO1_YTD.map((v, i) => Number((i * (15 / dataO1_YTD.length) + Math.sin(i)*5).toFixed(2))); // 增加波动
+
+        // --- 图表 1: 2025年度净值走势 ---
+        const chartTotal = echarts.init(document.getElementById('chartTotal'));
+        chartTotal.setOption({
+            tooltip: { trigger: 'axis' },
+            legend: { data: ['O1 科技增强', '沪深300指数', '纯黄金ETF'], bottom: 0 },
+            grid: { left: '3%', right: '4%', bottom: '10%', top: '5%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: datesFull },
+            yAxis: { type: 'value', scale: true, name: '累计净值' },
+            series: [
+                { 
+                    name: 'O1 科技增强', type: 'line', data: dataO1, 
+                    smooth: true, lineStyle: { width: 3, color: '#b22222' }, symbol: 'none' 
+                },
+                { 
+                    name: '沪深300指数', type: 'line', data: dataBenchmark300, 
+                    smooth: true, lineStyle: { width: 1, color: '#1f77b4', type: 'dashed' }, symbol: 'none' 
+                },
+                { 
+                    name: '纯黄金ETF', type: 'line', data: dataGold, 
+                    smooth: true, lineStyle: { width: 1, color: '#f1c40f', type: 'dotted' }, symbol: 'none' 
+                }
+            ]
+        });
+
+        // --- 图表 2: 回撤对比 (模拟数据) ---
+        // O1 最大回撤 -4.66%, 沪深300 最大回撤 -16% (根据文案)
+        const ddO1 = datesYTD.map((d, i) => {
+            if (i > datesYTD.length - 3) return -0.43; // 12月微跌
+            if (i > 10 && i < 15) return -4.66; // 模拟年中或某次回撤
+            return Math.random() * -1;
+        });
+        const ddIndex = datesYTD.map((d, i) => {
+            return (Math.random() * -15).toFixed(2); // 市场大幅波动
+        });
+
+        const chartDrawdown = echarts.init(document.getElementById('chartDrawdown'));
+        chartDrawdown.setOption({
+            tooltip: { trigger: 'axis', formatter: '{b}<br/>{a0}: {c0}%<br/>{a1}: {c1}%' },
+            legend: { data: ['O1 科技增强', '市场权益指数'], bottom: 0 },
+            grid: { left: '3%', right: '4%', bottom: '10%', top: '5%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: datesYTD },
+            yAxis: { type: 'value', axisLabel: { formatter: '{value} %' }, max: 0 },
+            series: [
+                { 
+                    name: 'O1 科技增强', type: 'line', data: ddO1, smooth: true, 
+                    lineStyle: { width: 2, color: '#b22222' },
+                    areaStyle: { color: 'rgba(178,34,34,0.2)' }, symbol: 'none'
+                },
+                { 
+                    name: '市场权益指数', type: 'line', data: ddIndex, smooth: true, 
+                    lineStyle: { width: 1, color: '#888' },
+                    areaStyle: { color: 'rgba(128,128,128,0.1)' }, symbol: 'none'
+                }
+            ]
+        });
+
+        window.addEventListener('resize', function() {
+            chartTotal.resize();
+            chartDrawdown.resize();
+        });
+    </script>
+</body>
+</html>

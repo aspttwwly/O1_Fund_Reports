@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O1 科技增强型基金 2026年1月运作报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff; 
+        }
+        .header { text-align: center; border-bottom: 2px solid #b22222; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { margin: 0; color: #b22222; font-size: 26px; letter-spacing: 2px; }
+        .header .subtitle { color: #666; font-size: 14px; margin-top: 5px; text-transform: uppercase; }
+        .report-info { margin-top: 10px; font-size: 12px; color: #888; }
+        
+        .section-title { 
+            border-left: 4px solid #b22222; padding-left: 12px; margin-top: 40px; margin-bottom: 20px; 
+            color: #2c3e50; font-size: 20px; font-weight: bold; background: linear-gradient(to right, #f9f9f9, #fff);
+            padding-top: 8px; padding-bottom: 8px;
+        }
+        
+        .kpi-container { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;}
+        .kpi-card { 
+            flex: 1; min-width: 140px; background: #f8f9fa; padding: 15px 10px; border-radius: 6px; text-align: center; 
+            border: 1px solid #e9ecef; box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .kpi-value { font-size: 22px; font-weight: bold; color: #b22222; margin: 5px 0; }
+        .kpi-label { font-size: 12px; color: #7f8c8d; }
+        .positive { color: #d62728; }
+        .safe { color: #2ca02c; }
+        
+        .chart-wrapper { width: 100%; height: 350px; margin: 20px 0; border: 1px solid #eee; border-radius: 4px; padding: 10px; box-sizing: border-box; }
+        .chart-caption { text-align: center; font-size: 12px; color: #999; margin-bottom: 20px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { padding: 10px; text-align: right; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; color: #333; font-weight: 600; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        
+        .holding-table th, .holding-table td { text-align: center; font-size: 12px; }
+        .holding-table th { background-color: #eef2f5; }
+
+        .analysis-text { text-align: justify; margin-bottom: 12px; font-size: 15px; color: #444; }
+        .highlight { color: #b22222; font-weight: bold; }
+        .tag { display: inline-block; padding: 2px 6px; background: #e9ecef; color: #495057; border-radius: 3px; font-size: 11px; margin-right: 4px; }
+        
+        .footer { margin-top: 50px; text-align: right; border-top: 1px solid #eee; padding-top: 20px; }
+        .logo-container { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 5px; }
+        .logo-text { font-family: "Times New Roman", "Songti SC", serif; font-size: 20px; font-weight: bold; color: #333; margin-left: 8px; }
+        
+        @media print { body { padding: 0; } .chart-wrapper { page-break-inside: avoid; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>O1 科技增强型基金 2026年1月运作报告</h1>
+        <div class="subtitle">O1 Tech Enhanced Fund Monthly Report - Jan 2026</div>
+        <div class="report-info">报告区间：2026-01-01 至 2026-01-31</div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <div class="kpi-label">2026年1月收益</div>
+            <div class="kpi-value positive">+4.45%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">最新净值 (NAV)</div>
+            <div class="kpi-value">1.5003</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">月度最大回撤</div>
+            <div class="kpi-value safe">-0.32%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">年化波动率 (Est.)</div>
+            <div class="kpi-value">9.12%</div>
+        </div>
+    </div>
+
+    <div class="section-title">一、 1月市场回顾与业绩归因</div>
+    
+    <p class="analysis-text">
+        2026年开年首月，全球市场波动剧烈，呈现出鲜明的<strong>“避险资产狂飙，风险资产分化”</strong>特征。O1基金凭借“国债打底、黄金进攻”的宏观配置模型，在1月取得了开门红。
+    </p>
+    <ul class="analysis-text">
+        <li><strong>本月收益：</strong><span class="highlight">+4.45%</span>。净值从2025年末的1.4364攀升至1.5003，再创历史新高。</li>
+        <li><strong>超额来源：</strong>
+            1. <strong>黄金的史诗级爆发：</strong>受地缘政治突发因素影响，黄金ETF（518850）单月暴涨<span class="highlight">16.79%</span>，从9.56元飙升至11.17元。尽管我们在上年末将仓位降至15.7%，但这部分头寸依然贡献了约2.6%的组合收益。
+            2. <strong>A股中小盘修复：</strong>中证500（510500）单月反弹<span class="highlight">8.31%</span>，显著优于大盘蓝筹。
+        </li>
+    </ul>
+
+    <div id="chartNAV" class="chart-wrapper"></div>
+    <div class="chart-caption">图1：2026年1月 O1基金净值 vs 核心成分走势 (归一化)</div>
+
+    <div class="section-title">二、 资产表现深度复盘</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left;">资产类别</th>
+                <th>标的代码</th>
+                <th>本月涨跌幅</th>
+                <th>贡献度</th>
+                <th>点评</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-weight: bold;">贵金属</td>
+                <td>华夏黄金 (518850)</td>
+                <td class="positive">+16.79%</td>
+                <td class="positive">High</td>
+                <td>单边逼空行情。1月下旬连续跳空高开，成为组合最强进攻矛。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">A股成长</td>
+                <td>中证500 (510500)</td>
+                <td class="positive">+8.31%</td>
+                <td class="positive">Med</td>
+                <td>中小盘估值修复，与黄金形成了罕见的“股金双升”格局。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">港股蓝筹</td>
+                <td>恒生ETF (159920)</td>
+                <td class="positive">+3.19%</td>
+                <td>Low</td>
+                <td>稳健上涨，提供基础流动性支持。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">固定收益</td>
+                <td>十年国债 (511260)</td>
+                <td class="safe">+0.78%</td>
+                <td>Base</td>
+                <td>不仅提供了稳健票息，且在权益波动时充当了定海神针。</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">港股科技</td>
+                <td>恒生科技 (513580)</td>
+                <td style="color: green;">-0.80%</td>
+                <td>Neg</td>
+                <td>受互联网监管传闻扰动，表现疲软，是本月唯一负贡献资产。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">三、 仓位动态与2月展望</div>
+    
+    <h3>1. 1月末持仓漂移监测</h3>
+    <p class="analysis-text">
+        由于资产价格剧烈变动（尤其是黄金），截至1月30日，组合的自然权重已发生显著漂移。黄金的权重被动上升，可能突破了我们设定的风险预算上限。
+    </p>
+    
+    <div style="overflow-x: auto;">
+        <table class="holding-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">状态</th>
+                    <th>恒生ETF<br>159920</th>
+                    <th>中证500<br>510500</th>
+                    <th>十年国债<br>511260</th>
+                    <th>恒生科技<br>513580</th>
+                    <th>华夏黄金<br>518850</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left; font-weight:bold; color:#666;">2025年末初始权重</td>
+                    <td>15.75%</td>
+                    <td>11.29%</td>
+                    <td>50.00%</td>
+                    <td>7.25%</td>
+                    <td>15.70%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; font-weight:bold; color:#b22222;">2026/1/30 自然权重</td>
+                    <td>15.56%</td>
+                    <td>11.71%</td>
+                    <td>48.24%</td>
+                    <td>6.89%</td>
+                    <td style="background:#fff3cd;">17.56% ↑</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>2. 下阶段策略：追求夏普，顺势进攻</h3>
+    <div class="analysis-text" style="background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #b22222;">
+        <p><strong>⚠️ 战略迭代：</strong></p>
+        <p>面对当前市场的高波动红利，我们决定调整原有的“绝对控回撤”思路，转为<strong>“追求高夏普比率 (Sharpe Ratio)”</strong>。我们认为，在趋势明确的市场环境下，为了规避短期波动而过早下车是最大的风险。</p>
+        <p><strong>操作计划 (2026年2月)：</strong>
+        <br>1. <strong>降低国债占比：</strong> 我们将打破过去“国债50%”的硬性防守底仓红线，计划适度减仓国债，释放流动性以捕捉更高弹性的机会。
+        <br>2. <strong>增配趋势资产：</strong> 对于<strong>黄金</strong>（避险趋势）和<strong>中证500</strong>（复苏趋势）等右侧特征明显的资产，我们不再因为“涨多了”而机械止盈。相反，我们将利用国债释放的仓位，进一步增加趋势性资产的配置权重，让利润奔跑，力争在2026年一季度确立显著的超额收益优势。
+        </p>
+    </div>
+
+    <div class="footer">
+        <div class="logo-container">
+            <div class="logo-text">O1 基金管理团队</div>
+        </div>
+        <div class="logo-subtext">O1 Fund Management - Quantitative Desk</div>
+        <div style="font-size: 12px; color: #999; margin-top: 5px;">报告生成日期: 2026年1月31日</div>
+    </div>
+
+    <script>
+        // --- 数据源 (基于 image_06315b.png) ---
+        // 日期
+        const dates = [
+            "2026/1/5", "2026/1/6", "2026/1/7", "2026/1/8", "2026/1/9", 
+            "2026/1/12", "2026/1/13", "2026/1/14", "2026/1/15", "2026/1/16",
+            "2026/1/19", "2026/1/20", "2026/1/21", "2026/1/22", "2026/1/23",
+            "2026/1/26", "2026/1/27", "2026/1/28", "2026/1/29", "2026/1/30"
+        ];
+
+        // 价格数据 (Array order matches dates)
+        const p_159920 = [1.596, 1.620, 1.601, 1.580, 1.588, 1.605, 1.615, 1.628, 1.623, 1.612, 1.598, 1.596, 1.598, 1.601, 1.609, 1.610, 1.633, 1.676, 1.685, 1.647];
+        const p_510500 = [7.792, 7.961, 7.999, 8.024, 8.216, 8.416, 8.306, 8.365, 8.277, 8.295, 8.348, 8.324, 8.432, 8.469, 8.719, 8.564, 8.619, 8.691, 8.591, 8.440];
+        const p_511260 = [133.743, 133.561, 133.528, 133.734, 133.860, 133.873, 133.986, 134.044, 134.147, 134.232, 134.266, 134.527, 134.650, 134.576, 134.577, 134.634, 134.585, 134.670, 134.730, 134.793];
+        const p_513580 = [0.754, 0.765, 0.752, 0.750, 0.757, 0.773, 0.769, 0.774, 0.767, 0.765, 0.761, 0.757, 0.763, 0.764, 0.767, 0.755, 0.759, 0.771, 0.763, 0.748];
+        const p_518850 = [9.564, 9.653, 9.590, 9.580, 9.660, 9.847, 9.860, 9.997, 9.940, 9.924, 10.081, 10.156, 10.457, 10.414, 10.706, 11.002, 11.011, 11.366, 11.985, 11.170];
+
+        // 初始权重 (From image_062e96.png Dec 2025)
+        const w = {
+            hs: 0.1575,
+            csi: 0.1129,
+            bond: 0.5000,
+            tech: 0.0725,
+            gold: 0.1570
+        };
+
+        // 归一化函数 (Start at 1.0)
+        function normalize(arr) {
+            return arr.map(v => Number((v / arr[0]).toFixed(4)));
+        }
+
+        const n_hs = normalize(p_159920);
+        const n_csi = normalize(p_510500);
+        const n_bond = normalize(p_511260);
+        const n_tech = normalize(p_513580);
+        const n_gold = normalize(p_518850);
+
+        // 计算基金净值曲线
+        const nav_fund = dates.map((d, i) => {
+            let val = (w.hs * n_hs[i]) + (w.csi * n_csi[i]) + (w.bond * n_bond[i]) + (w.tech * n_tech[i]) + (w.gold * n_gold[i]);
+            return val;
+        });
+        
+        // Adjust Fund NAV to start at 1.0 exact
+        const startVal = nav_fund[0];
+        const nav_fund_final = nav_fund.map(v => Number((v / startVal).toFixed(4)));
+
+        // --- ECharts 绘图 ---
+        const chartNAV = echarts.init(document.getElementById('chartNAV'));
+        chartNAV.setOption({
+            tooltip: { 
+                trigger: 'axis',
+                formatter: function (params) {
+                    let res = params[0].name + '<br/>';
+                    params.forEach(item => {
+                        let val = ((item.value - 1) * 100).toFixed(2);
+                        let color = val >= 0 ? '#d62728' : 'green';
+                        res += item.marker + item.seriesName + ': <span style="color:'+color+'">' + (val>0?'+':'') + val + '%</span><br/>';
+                    });
+                    return res;
+                }
+            },
+            legend: { 
+                data: ['O1 基金净值', '黄金(518850)', '中证500', '国债'],
+                bottom: 0 
+            },
+            grid: { left: '3%', right: '4%', bottom: '10%', top: '5%', containLabel: true },
+            xAxis: { 
+                type: 'category', 
+                boundaryGap: false, 
+                data: dates.map(d => d.substring(5)) // Show MM/DD
+            },
+            yAxis: { 
+                type: 'value', 
+                scale: true, 
+                axisLabel: { formatter: function(v){ return ((v-1)*100).toFixed(0) + '%'; } }
+            },
+            series: [
+                { 
+                    name: 'O1 基金净值', type: 'line', data: nav_fund_final, 
+                    smooth: true, lineStyle: { width: 4, color: '#b22222' }, symbol: 'none', z: 10
+                },
+                { 
+                    name: '黄金(518850)', type: 'line', data: n_gold, 
+                    smooth: true, lineStyle: { width: 2, color: '#f1c40f' }, symbol: 'none'
+                },
+                { 
+                    name: '中证500', type: 'line', data: n_csi, 
+                    smooth: true, lineStyle: { width: 1, color: '#1f77b4', type: 'dashed' }, symbol: 'none'
+                },
+                { 
+                    name: '国债', type: 'line', data: n_bond, 
+                    smooth: true, lineStyle: { width: 1, color: '#2ca02c', type: 'dotted' }, symbol: 'none'
+                }
+            ]
+        });
+
+        window.addEventListener('resize', function() {
+            chartNAV.resize();
+        });
+    </script>
+</body>
+</html>

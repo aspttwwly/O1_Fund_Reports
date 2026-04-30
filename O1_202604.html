@@ -143,7 +143,7 @@
         </tbody>
     </table>
 
-    <div id="chartApril" class="chart-wrapper"></div>
+    <div id="chartApril" class="chart-wrapper" style="height: 390px;"></div>
     <div class="chart-caption">图1：2026年4月 O1基金净值与滚动回撤走势</div>
 
     <div class="section-title">二、 4月市场环境：国内韧性提供支撑，外部油价与利率仍是扰动源</div>
@@ -330,10 +330,10 @@
                 return res;
             } },
             legend: { data: ['净值', '滚动回撤'], bottom: 0 },
-            grid: { left: '4%', right: '6%', bottom: '12%', top: '8%', containLabel: true },
+            grid: { left: '4%', right: '6%', bottom: '12%', top: '18%', containLabel: true },
             xAxis: { type: 'category', boundaryGap: false, data: datesApril },
-            yAxis: [{ type: 'value', name: '净值', scale: true, axisLabel: { formatter: '{value}' } }, { type: 'value', name: '回撤', min: -3, max: 1, axisLabel: { formatter: '{value} %' }, splitLine: { show: false } }],
-            series: [{ name: '净值', type: 'line', data: navApril, smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#1a365d' }, areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(26,54,93,0.25)'},{offset:1,color:'rgba(26,54,93,0.04)'}]) }, markPoint: { data: [{ name: '阶段高点', coord: ['04/20', 1.5198], value: '04/20 高点' }, { name: '回撤低点', coord: ['04/28', 1.4937], value: '04/28 回撤低点' }] } }, { name: '滚动回撤', type: 'line', yAxisIndex: 1, data: ddApril, smooth: true, symbol: 'none', lineStyle: { width: 2, color: '#2ca02c', type: 'dashed' } }]
+            yAxis: [{ type: 'value', name: '净值', min: 1.44, max: 1.54, scale: true, nameGap: 12, axisLabel: { formatter: '{value}' } }, { type: 'value', name: '回撤', min: -3, max: 1, axisLabel: { formatter: '{value} %' }, splitLine: { show: false } }],
+            series: [{ name: '净值', type: 'line', data: navApril, smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#1a365d' }, areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(26,54,93,0.25)'},{offset:1,color:'rgba(26,54,93,0.04)'}]) }, markPoint: { symbolSize: 46, label: { position: 'top', distance: 6, fontSize: 12 }, data: [{ name: '阶段高点', coord: ['04/20', 1.5198], value: '04/20 高点' }, { name: '回撤低点', coord: ['04/28', 1.4937], value: '04/28 回撤低点' }] } }, { name: '滚动回撤', type: 'line', yAxisIndex: 1, data: ddApril, smooth: true, symbol: 'none', lineStyle: { width: 2, color: '#2ca02c', type: 'dashed' } }]
         });
 
         const chartContribution = echarts.init(document.getElementById('chartContribution'));

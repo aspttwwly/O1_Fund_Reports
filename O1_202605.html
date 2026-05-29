@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O1 科技增强型基金 2026年5月运作报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        @page { size: A4; margin: 18mm; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.68; color: #333; max-width: 920px; margin: 0 auto; padding: 20px; background-color: #fff;
+        }
+        .header { text-align: center; border-bottom: 2px solid #1a365d; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { margin: 0; color: #1a365d; font-size: 28px; letter-spacing: 1px; }
+        .header .subtitle { color: #666; font-size: 14px; margin-top: 6px; text-transform: uppercase; }
+        .report-info { margin-top: 10px; font-size: 12px; color: #888; }
+        .section-title {
+            border-left: 4px solid #1a365d; padding-left: 12px; margin-top: 38px; margin-bottom: 18px;
+            color: #2c3e50; font-size: 20px; font-weight: bold; background: linear-gradient(to right, #f4f6f9, #fff);
+            padding-top: 8px; padding-bottom: 8px;
+        }
+        .kpi-container { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 30px; flex-wrap: wrap; }
+        .kpi-card {
+            flex: 1; min-width: 150px; background: #f8f9fa; padding: 15px 12px; border-radius: 8px; text-align: center;
+            border: 1px solid #e9ecef; box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .kpi-value { font-size: 24px; font-weight: bold; color: #1a365d; margin: 6px 0; }
+        .kpi-value.positive, .positive { color: #d62728; font-weight: bold; }
+        .kpi-value.negative, .negative { color: #2ca02c; font-weight: bold; }
+        .kpi-label { font-size: 12px; color: #7f8c8d; }
+        .chart-wrapper { width: 100%; height: 360px; margin: 20px 0; border: 1px solid #eee; border-radius: 6px; padding: 10px; box-sizing: border-box; }
+        .chart-caption { text-align: center; font-size: 12px; color: #999; margin-bottom: 20px; }
+        .analysis-text { text-align: justify; margin-bottom: 12px; font-size: 15px; color: #444; }
+        .highlight { color: #d62728; font-weight: bold; }
+        .risk { color: #2ca02c; font-weight: bold; }
+        .subdued { color: #666; font-size: 12px; font-weight: normal; }
+        .callout {
+            background: #f8f9fa; padding: 14px 16px; border-radius: 6px; border-left: 4px solid #1a365d; margin: 18px 0;
+        }
+        .callout p { margin: 6px 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+        .mini-card { background: #fafbfc; border: 1px solid #eceff3; border-radius: 8px; padding: 14px 16px; }
+        .mini-card h4 { margin: 0 0 8px 0; font-size: 15px; color: #1a365d; }
+        .mini-card p { margin: 0; font-size: 14px; color: #444; text-align: justify; }
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13px; }
+        th, td { padding: 10px; text-align: right; border-bottom: 1px solid #ddd; vertical-align: top; }
+        th { background-color: #f8f9fa; color: #333; font-weight: 600; }
+        th:first-child, td:first-child { text-align: left; }
+        .holding-table th, .holding-table td { text-align: center; font-size: 12px; }
+        .holding-table th:first-child, .holding-table td:first-child { text-align: left; }
+        .holding-table th { background-color: #eef2f5; }
+        .note { font-size: 12px; color: #777; margin-top: 8px; }
+        .source-list { font-size: 12px; color: #666; line-height: 1.7; }
+        .source-list a { color: #1a365d; word-break: break-all; }
+        .source-list li { margin-bottom: 4px; }
+        .footer { margin-top: 44px; text-align: right; border-top: 1px solid #eee; padding-top: 18px; }
+        .logo-text { font-family: "Times New Roman", "Songti SC", serif; font-size: 20px; font-weight: bold; color: #333; }
+        .logo-subtext { font-size: 13px; color: #666; }
+        sup { color: #666; font-size: 11px; }
+        @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+        @media print { body { padding: 0; } .chart-wrapper { page-break-inside: avoid; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>O1 科技增强型基金 2026年5月运作报告</h1>
+        <div class="subtitle">O1 Tech Enhanced Fund Monthly Report - May 2026</div>
+        <div class="report-info">月度区间：2026-05-01 至 2026-05-29 ｜ 最新净值更新至：2026-05-29 ｜ 4/30申购现金流已做净值口径调整</div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card"><div class="kpi-label">2026年5月收益</div><div class="kpi-value negative">-0.99%</div></div>
+        <div class="kpi-card"><div class="kpi-label">最新净值 (2026/05/29)</div><div class="kpi-value">1.4860</div></div>
+        <div class="kpi-card"><div class="kpi-label">5月区间最大回撤</div><div class="kpi-value negative">-2.98%</div></div>
+        <div class="kpi-card"><div class="kpi-label">年内收益 (截至5/29)</div><div class="kpi-value positive">+2.69%</div></div>
+        <div class="kpi-card"><div class="kpi-label">成立以来累计收益</div><div class="kpi-value positive">+48.60%</div></div>
+    </div>
+
+    <div class="section-title">一、核心结论：5月进入震荡消化期，净值小幅回落但风险仍受控</div>
+
+    <p class="analysis-text">
+        2026年5月，O1基金没有延续4月的单边修复，而是呈现“月初冲高、月中回落、月底小幅企稳”的路径。
+        按现金流调整后的组合净值从 <strong>2026-04-30</strong> 的
+        <span class="highlight">1.5008</span> 回落至 <strong>2026-05-29</strong> 的
+        <span class="risk">1.4860</span>，月度收益为
+        <span class="risk">-0.99%</span>；年内收益由4月底的 +3.71% 回落至
+        <span class="highlight">+2.69%</span>。
+    </p>
+    <p class="analysis-text">
+        风险方面，5月区间最大回撤为 <span class="risk">-2.98%</span>，出现在5月13日阶段高点
+        <strong>1.5284</strong> 之后，于5月28日回落至 <strong>1.4828</strong>。月度年化波动率约
+        <strong>9.27%</strong>，低于4月的11.44%和3月的18.12%，说明组合下行幅度虽然扩大，但波动节奏整体仍较3月温和。
+    </p>
+    <p class="analysis-text">
+        截至5月29日，组合较3月23日低点 <span class="risk">1.4082</span> 仍反弹
+        <span class="highlight">+5.52%</span>，但距离2月25日历史高点 <strong>1.5557</strong> 的修复缺口扩大至
+        <span class="risk">-4.48%</span>。这意味着4月的修复成果仍在，但5月并没有完成向历史高点的进一步突破。
+    </p>
+
+    <div class="callout">
+        <p><strong>一句话总结：</strong> 5月不是趋势性恶化，而是4月反弹后的震荡再平衡；黄金与港股敞口拖累净值，10年国债底仓提供缓冲，组合仍处于“修复后观察二次回撤”的阶段。</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr><th>阶段</th><th>区间收益</th><th>年化波动率（估算）</th><th>区间最大回撤</th><th>阶段说明</th></tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>2026年1月</strong></td>
+                <td class="positive">+4.48%</td>
+                <td>10.98%</td>
+                <td class="negative">-1.97%</td>
+                <td>开局阶段延续进攻性，黄金与权益同步贡献收益。</td>
+            </tr>
+
+            <tr>
+                <td><strong>2026年2月</strong></td>
+                <td class="positive">+2.82%</td>
+                <td>10.87%</td>
+                <td class="negative">-1.21%</td>
+                <td>组合继续走强，并在2月底附近创出阶段高位。</td>
+            </tr>
+
+            <tr>
+                <td><strong>2026年3月</strong></td>
+                <td class="negative">-7.07%</td>
+                <td>18.12%</td>
+                <td class="negative">-9.41%</td>
+                <td>外部冲击下黄金与权益共振承压，组合出现成立以来最深回撤。</td>
+            </tr>
+
+            <tr>
+                <td><strong>2026年4月</strong></td>
+                <td class="positive">+3.89%</td>
+                <td>11.44%</td>
+                <td class="negative">-1.72%</td>
+                <td>净值完成技术性修复，波动率回落，回撤重新收敛。</td>
+            </tr>
+
+            <tr style="background:#f4fbf7;">
+                <td><strong>2026年5月</strong></td>
+                <td class="negative">-0.99%</td>
+                <td>9.27%</td>
+                <td class="negative">-2.98%</td>
+                <td>月初冲高后回落，黄金与港股敞口拖累，债券提供缓冲。</td>
+            </tr>
+
+            <tr>
+                <td><strong>2026年内（截至5/29）</strong></td>
+                <td class="positive">+2.69%</td>
+                <td>13.03%</td>
+                <td class="negative">-9.48%</td>
+                <td>年内仍为正收益，但3月形成的最大回撤仍是全年风险锚点。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="chartMay" class="chart-wrapper" style="height: 390px;"></div>
+    <div class="chart-caption">图1：2026年5月 O1基金净值与滚动回撤走势（现金流调整后）</div>
+
+    <div class="section-title">二、5月市场环境：全球风险偏好改善，但黄金与本地科技资产承压</div>
+
+    <p class="analysis-text">
+        5月的宏观环境有明显的分化。一方面，国家统计局公布的最新官方数据仍停留在4月：4月制造业PMI为
+        <strong>50.3%</strong>，生产指数为 <strong>51.5%</strong>，新订单指数为 <strong>50.6%</strong>，制造业仍处扩张区间。另一方面，Reuters在5月29日的调查显示，市场预计5月官方制造业PMI可能回落至
+        <strong>50.0</strong>，即扩张与收缩的分界线，原因包括内需偏弱和能源/物流成本压力。<sup>[1][2]</sup>
+    </p>
+    <p class="analysis-text">
+        大宗商品是本月组合归因的重要背景。Reuters报道显示，5月29日Brent原油跌至约 <strong>91.82美元/桶</strong>，
+        WTI约 <strong>87.20美元/桶</strong>，并创下4月初以来最陡的一周跌幅；油价回落来自市场对美伊停火延长和霍尔木兹海峡限制缓解的预期。<sup>[3]</sup>
+        但黄金并未因此走出持续上行，Reuters同日指出，现货黄金当日反弹，但5月仍预计下跌超过 <strong>2%</strong>，主要压力来自通胀担忧与“利率维持高位更久”的预期。<sup>[4]</sup>
+    </p>
+    <p class="analysis-text">
+        权益方面，全球科技风险偏好并不差。Reuters称，5月29日美股主要指数继续刷新高，科技板块上涨，AI热度和强劲盈利预期支撑风险偏好。<sup>[5]</sup>
+        但这并没有完全传导至组合持有的港股大盘与恒生科技ETF；根据本组合ETF价格，5月恒生ETF下跌约
+        <span class="risk">-3.08%</span>，恒生科技ETF下跌约 <span class="risk">-1.28%</span>。
+    </p>
+
+    <div class="grid-2">
+        <div class="mini-card"><h4>1) 全球风险偏好改善，但不是普涨</h4><p>美股科技链条受AI和盈利驱动表现强，但港股科技及大盘ETF未能同步，组合权益端分化明显。</p></div>
+        <div class="mini-card"><h4>2) 油价回落缓解通胀压力</h4><p>油价大幅回落有利于降低滞胀预期，但地缘风险尚未完全消失，市场仍对政策利率路径保持敏感。</p></div>
+        <div class="mini-card"><h4>3) 黄金从避险项转为拖累项</h4><p>黄金5月继续承压，说明在高利率预期仍强的阶段，黄金对组合的保护作用并不稳定。</p></div>
+        <div class="mini-card"><h4>4) 国内景气等待5月数据确认</h4><p>4月官方PMI仍在扩张区间，但市场预期5月或降至荣枯线附近，6月需继续观察需求和价格压力。</p></div>
+    </div>
+
+    <div class="section-title">三、组合归因：债券稳定贡献，黄金与港股ETF成为主要拖累</div>
+
+    <p class="analysis-text">
+        5月报告披露2026年4月30日的再平衡目标权重：恒生ETF为 <strong>14.50%</strong>，
+        中证500为 <strong>15.12%</strong>，10年国债维持 <strong>40.00%</strong>，
+        恒生科技为 <strong>13.47%</strong>，华夏黄金为 <strong>16.92%</strong>。
+        与3月底相比，组合进一步提高中证500权重、保持债券底仓稳定，同时黄金权重小幅回升。
+    </p>
+
+    <div style="overflow-x:auto;">
+        <table class="holding-table">
+            <thead>
+                <tr>
+                    <th>状态节点</th><th>恒生ETF<br>SZ159920</th><th>中证500<br>SH510500</th><th>10年国债<br>SH511260</th><th>恒生科技<br>SH513580</th><th>华夏黄金<br>SH518850</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>2025/12/31</strong></td>
+                    <td>15.75%</td><td>11.29%</td><td>50.00%</td><td>7.25%</td><td>15.70%</td>
+                </tr>
+
+                <tr>
+                    <td><strong>2026/01/30</strong></td>
+                    <td>13.60%</td><td>12.24%</td><td>40.00%</td><td>11.76%</td><td>22.40%</td>
+                </tr>
+
+                <tr>
+                    <td><strong>2026/02/27</strong></td>
+                    <td>17.51%</td><td>6.35%</td><td>40.00%</td><td>9.87%</td><td>26.26%</td>
+                </tr>
+
+                <tr>
+                    <td><strong>2026/03/31</strong></td>
+                    <td>15.72%</td><td>13.17%</td><td>40.00%</td><td>14.89%</td><td>16.22%</td>
+                </tr>
+
+                <tr style="background:#fff3cd;">
+                    <td><strong>2026/04/30（本期披露）</strong></td>
+                    <td>14.50%</td><td>15.12%</td><td>40.00%</td><td>13.47%</td><td>16.92%</td>
+                </tr>
+
+                <tr>
+                    <td><strong>2026/05/29</strong></td>
+                    <td colspan="5">🔒 保护期内，不披露月末自然漂移与动态调仓后的精确权重</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="analysis-text">
+        下表以<strong>2026-04-30披露目标权重</strong>和<strong>4月30日至5月29日标的ETF价格变化</strong>进行近似估算。
+        由于5月初存在节假日后再平衡、四舍五入和4月30日申购现金流调整，表中贡献不是逐笔交易归因，但可用于判断本月主要收益来源。
+    </p>
+
+    <table>
+        <thead>
+            <tr><th>资产</th><th>披露权重</th><th>4/30-5/29价格变化</th><th>估算贡献</th><th>归因判断</th></tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>恒生ETF<br><span class="subdued">SZ159920</span></strong></td>
+                <td>14.50%</td>
+                <td class="negative">-3.08%</td>
+                <td class="negative">-0.45%</td>
+                <td>港股大盘ETF回落，是本月主要拖累项之一。</td>
+            </tr>
+
+            <tr>
+                <td><strong>中证500<br><span class="subdued">SH510500</span></strong></td>
+                <td>15.12%</td>
+                <td class="positive">+0.15%</td>
+                <td class="positive">+0.02%</td>
+                <td>月度价格基本持平，对净值影响接近中性。</td>
+            </tr>
+
+            <tr>
+                <td><strong>10年国债<br><span class="subdued">SH511260</span></strong></td>
+                <td>40.00%</td>
+                <td class="positive">+0.60%</td>
+                <td class="positive">+0.24%</td>
+                <td>债券底仓延续稳定正贡献，缓冲了权益与黄金回撤。</td>
+            </tr>
+
+            <tr>
+                <td><strong>恒生科技<br><span class="subdued">SH513580</span></strong></td>
+                <td>13.47%</td>
+                <td class="negative">-1.28%</td>
+                <td class="negative">-0.17%</td>
+                <td>科技弹性未能延续，月内波动对组合有轻微拖累。</td>
+            </tr>
+
+            <tr>
+                <td><strong>华夏黄金<br><span class="subdued">SH518850</span></strong></td>
+                <td>16.92%</td>
+                <td class="negative">-2.86%</td>
+                <td class="negative">-0.48%</td>
+                <td>金价月内回落，对组合形成最大单项负贡献。</td>
+            </tr>
+
+            <tr>
+                <td><strong>再平衡/现金残差<br><span class="subdued">rounding & timing</span></strong></td>
+                <td>—</td>
+                <td>—</td>
+                <td class="negative">-0.15%</td>
+                <td>包括4月30日申购现金流按份额调整、节假日后执行再平衡与四舍五入差异。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="chartContribution" class="chart-wrapper" style="height: 320px;"></div>
+    <div class="chart-caption">图2：5月主要资产估算贡献（基于4/30披露目标权重，现金流调整后）</div>
+
+    <div class="section-title">四、2026年前五个月复盘：年内仍为正，但修复斜率放缓</div>
+
+    <p class="analysis-text">
+        2026年前五个月的净值路径可以概括为：1月和2月连续上涨，3月急跌，4月修复，5月震荡回落。
+        截至5月29日，组合年内收益为 <span class="highlight">+2.69%</span>，成立以来累计收益为
+        <span class="highlight">+48.60%</span>，折算年化复合收益约 <span class="highlight">+21.97%</span>。
+    </p>
+    <p class="analysis-text">
+        风险框架上，成立以来最大回撤仍维持在 <span class="risk">-9.48%</span>，发生在2月25日高点至3月23日低点之间。
+        5月的主要变化不是刷新最大回撤，而是修复斜率放缓：净值未能突破5月13日高点 <strong>1.5284</strong>，
+        并在月底回到1.49附近。后续更重要的观察点，是组合能否在黄金和港股仍有扰动时维持低波动修复。
+    </p>
+
+    <div id="chartMonthly" class="chart-wrapper"></div>
+    <div class="chart-caption">图3：2026年前五个月月度收益率对比</div>
+
+    <div id="chartHistory" class="chart-wrapper"></div>
+    <div class="chart-caption">图4：O1基金成立以来累计净值与累计收益率走势（截至2026/05/29，现金流调整后）</div>
+
+    <div class="section-title">五、后续观察要点</div>
+
+    <div class="grid-2">
+        <div class="mini-card"><h4>黄金仓位的风险预算</h4><p>黄金5月继续负贡献，若高利率预期仍压制贵金属，应继续避免其成为组合波动放大器。</p></div>
+        <div class="mini-card"><h4>港股科技能否重新跟随全球AI风险偏好</h4><p>海外科技情绪较强，但港股科技ETF表现偏弱，6月需要观察资金是否重新回流港股科技板块。</p></div>
+        <div class="mini-card"><h4>中证500的相对韧性</h4><p>中证500本月价格基本持平，若国内PMI和需求数据不再走弱，可继续作为权益端的稳定弹性来源。</p></div>
+        <div class="mini-card"><h4>现金流调整与份额口径</h4><p>新增申购资金已按份额处理，后续月报应持续使用现金流调整净值，避免资金流入/流出扭曲收益。</p></div>
+    </div>
+
+    <div class="section-title">六、市场环境资料来源</div>
+    <ol class="source-list">
+        <li>国家统计局，2026年4月中国采购经理指数运行情况，2026-04-30<br><a href="https://www.stats.gov.cn/sj/zxfbhjd/202604/t20260430_1963473.html">https://www.stats.gov.cn/sj/zxfbhjd/202604/t20260430_1963473.html</a></li>
+        <li>Reuters, China&#x27;s factory activity likely remained flat in May: Reuters poll, 2026-05-29<br><a href="https://www.reuters.com/world/china/chinas-factory-activity-likely-remained-flat-may-2026-05-29/">https://www.reuters.com/world/china/chinas-factory-activity-likely-remained-flat-may-2026-05-29/</a></li>
+        <li>Reuters, Oil prices fall 2% as market awaits possible US-Iran ceasefire deal, 2026-05-29<br><a href="https://www.reuters.com/business/energy/oil-falls-slightly-reports-potential-us-iran-ceasefire-deal-2026-05-29/">https://www.reuters.com/business/energy/oil-falls-slightly-reports-potential-us-iran-ceasefire-deal-2026-05-29/</a></li>
+        <li>Reuters, Gold gains on US-Iran ceasefire optimism but set for monthly drop, 2026-05-29<br><a href="https://www.reuters.com/world/india/gold-edges-higher-investors-weigh-us-iran-ceasefire-deal-reports-fed-rate-2026-05-29/">https://www.reuters.com/world/india/gold-edges-higher-investors-weigh-us-iran-ceasefire-deal-reports-fed-rate-2026-05-29/</a></li>
+        <li>Reuters, Wall St extends rally on Mideast peace deal hopes; Dell surges, 2026-05-29<br><a href="https://www.reuters.com/business/wall-st-futures-steady-investors-await-mideast-deal-updates-dell-soars-2026-05-29/">https://www.reuters.com/business/wall-st-futures-steady-investors-await-mideast-deal-updates-dell-soars-2026-05-29/</a></li>
+        <li>Reuters, Hang Seng Tech Index quote page, 2026-05<br><a href="https://www.reuters.com/markets/quote/.HSTECH/">https://www.reuters.com/markets/quote/.HSTECH/</a></li>
+    </ol>
+
+    <div class="note">
+        注：组合净值、仓位和ETF价格来自用户提供的《O1 ETF组合202605.xlsx》；4月报告版式与披露口径参照用户提供的《O1_202604.html》。市场环境解读引用公开资料；组合归因为基于已披露仓位结构的估算性判断，并非逐笔成交贡献拆分。
+    </div>
+
+    <div class="footer">
+        <div class="logo-text">O1 基金管理团队</div>
+        <div class="logo-subtext">O1 Fund Management - Quantitative Desk</div>
+        <div style="font-size: 12px; color: #999; margin-top: 5px;">报告生成日期：2026年5月29日</div>
+    </div>
+
+    <script>
+        const datesMay = ["04/30", "05/06", "05/07", "05/08", "05/11", "05/12", "05/13", "05/14", "05/15", "05/18", "05/19", "05/20", "05/21", "05/22", "05/25", "05/26", "05/27", "05/28", "05/29"];
+        const navMay = [1.500814, 1.512635, 1.527397, 1.525136, 1.525786, 1.523304, 1.528369, 1.52122, 1.502322, 1.495701, 1.501104, 1.496426, 1.485371, 1.494053, 1.498919, 1.501381, 1.488902, 1.482766, 1.485999];
+        const ddMay = [0.0, 0.0, 0.0, -0.15, -0.11, -0.27, 0.0, -0.47, -1.7, -2.14, -1.78, -2.09, -2.81, -2.25, -1.93, -1.77, -2.58, -2.98, -2.77];
+        const contribNames = ["恒生ETF", "中证500", "10年国债", "恒生科技", "华夏黄金", "再平衡/现金残差"];
+        const contribValues = [-0.45, 0.02, 0.24, -0.17, -0.48, -0.15];
+        const monthlyLabels = ["2026年1月", "2026年2月", "2026年3月", "2026年4月", "2026年5月"];
+        const monthlyValues = [4.48, 2.82, -7.07, 3.89, -0.99];
+        const datesHistory = ["2024-05-31", "2024-06-03", "2024-06-04", "2024-06-05", "2024-06-06", "2024-06-07", "2024-06-11", "2024-06-12", "2024-06-13", "2024-06-14", "2024-06-17", "2024-06-18", "2024-06-19", "2024-06-20", "2024-06-21", "2024-06-24", "2024-06-25", "2024-06-26", "2024-06-27", "2024-06-28", "2024-07-01", "2024-07-02", "2024-07-03", "2024-07-04", "2024-07-05", "2024-07-08", "2024-07-09", "2024-07-10", "2024-07-11", "2024-07-12", "2024-07-15", "2024-07-16", "2024-07-17", "2024-07-18", "2024-07-19", "2024-07-22", "2024-07-23", "2024-07-24", "2024-07-25", "2024-07-26", "2024-07-29", "2024-07-30", "2024-07-31", "2024-08-01", "2024-08-02", "2024-08-05", "2024-08-06", "2024-08-07", "2024-08-08", "2024-08-09", "2024-08-12", "2024-08-13", "2024-08-14", "2024-08-15", "2024-08-16", "2024-08-19", "2024-08-20", "2024-08-21", "2024-08-22", "2024-08-23", "2024-08-26", "2024-08-27", "2024-08-28", "2024-08-29", "2024-08-30", "2024-09-02", "2024-09-03", "2024-09-04", "2024-09-05", "2024-09-06", "2024-09-09", "2024-09-10", "2024-09-11", "2024-09-12", "2024-09-13", "2024-09-18", "2024-09-19", "2024-09-20", "2024-09-23", "2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27", "2024-09-30", "2024-10-08", "2024-10-09", "2024-10-10", "2024-10-11", "2024-10-14", "2024-10-15", "2024-10-16", "2024-10-17", "2024-10-18", "2024-10-21", "2024-10-22", "2024-10-23", "2024-10-24", "2024-10-25", "2024-10-28", "2024-10-29", "2024-10-30", "2024-10-31", "2024-11-01", "2024-11-04", "2024-11-05", "2024-11-06", "2024-11-07", "2024-11-08", "2024-11-11", "2024-11-12", "2024-11-13", "2024-11-14", "2024-11-15", "2024-11-18", "2024-11-19", "2024-11-20", "2024-11-21", "2024-11-22", "2024-11-25", "2024-11-26", "2024-11-27", "2024-11-28", "2024-11-29", "2024-12-02", "2024-12-03", "2024-12-04", "2024-12-05", "2024-12-06", "2024-12-09", "2024-12-10", "2024-12-11", "2024-12-12", "2024-12-13", "2024-12-16", "2024-12-17", "2024-12-18", "2024-12-19", "2024-12-20", "2024-12-23", "2024-12-24", "2024-12-25", "2024-12-26", "2024-12-27", "2024-12-30", "2024-12-31", "2025-01-02", "2025-01-03", "2025-01-06", "2025-01-07", "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13", "2025-01-14", "2025-01-15", "2025-01-16", "2025-01-17", "2025-01-20", "2025-01-21", "2025-01-22", "2025-01-23", "2025-01-24", "2025-01-27", "2025-02-05", "2025-02-06", "2025-02-07", "2025-02-10", "2025-02-11", "2025-02-12", "2025-02-13", "2025-02-14", "2025-02-17", "2025-02-18", "2025-02-19", "2025-02-20", "2025-02-21", "2025-02-24", "2025-02-25", "2025-02-26", "2025-02-27", "2025-02-28", "2025-03-03", "2025-03-04", "2025-03-05", "2025-03-06", "2025-03-07", "2025-03-10", "2025-03-11", "2025-03-12", "2025-03-13", "2025-03-14", "2025-03-17", "2025-03-18", "2025-03-19", "2025-03-20", "2025-03-21", "2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "2025-03-28", "2025-03-31", "2025-04-01", "2025-04-02", "2025-04-03", "2025-04-07", "2025-04-08", "2025-04-09", "2025-04-10", "2025-04-11", "2025-04-14", "2025-04-15", "2025-04-16", "2025-04-17", "2025-04-18", "2025-04-21", "2025-04-22", "2025-04-23", "2025-04-24", "2025-04-25", "2025-04-28", "2025-04-29", "2025-04-30", "2025-05-06", "2025-05-07", "2025-05-08", "2025-05-09", "2025-05-12", "2025-05-13", "2025-05-14", "2025-05-15", "2025-05-16", "2025-05-19", "2025-05-20", "2025-05-21", "2025-05-22", "2025-05-23", "2025-05-26", "2025-05-27", "2025-05-28", "2025-05-29", "2025-05-30", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12", "2025-06-13", "2025-06-16", "2025-06-17", "2025-06-18", "2025-06-19", "2025-06-20", "2025-06-23", "2025-06-24", "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-30", "2025-07-01", "2025-07-02", "2025-07-03", "2025-07-04", "2025-07-07", "2025-07-08", "2025-07-09", "2025-07-10", "2025-07-11", "2025-07-14", "2025-07-15", "2025-07-16", "2025-07-17", "2025-07-18", "2025-07-21", "2025-07-22", "2025-07-23", "2025-07-24", "2025-07-25", "2025-07-28", "2025-07-29", "2025-07-30", "2025-07-31", "2025-08-01", "2025-08-04", "2025-08-05", "2025-08-06", "2025-08-07", "2025-08-08", "2025-08-11", "2025-08-12", "2025-08-13", "2025-08-14", "2025-08-15", "2025-08-18", "2025-08-19", "2025-08-20", "2025-08-21", "2025-08-22", "2025-08-25", "2025-08-26", "2025-08-27", "2025-08-28", "2025-08-29", "2025-09-01", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09", "2025-09-10", "2025-09-11", "2025-09-12", "2025-09-15", "2025-09-16", "2025-09-17", "2025-09-18", "2025-09-19", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-25", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29"];
+        const navHistory = [1.0, 0.997144, 1.002779, 0.999658, 1.003427, 1.003116, 0.993186, 0.9941, 0.994263, 0.995124, 0.995019, 0.996147, 0.998852, 0.999354, 0.999272, 0.991036, 0.991297, 0.992444, 0.987428, 0.991391, 0.991391, 0.990469, 0.992413, 0.992593, 0.993051, 0.988818, 0.991392, 0.992135, 0.998336, 1.002038, 0.999994, 1.003642, 1.007414, 1.007757, 0.996942, 0.997594, 0.991108, 0.993208, 0.982811, 0.987549, 0.989952, 0.989446, 1.001208, 1.030938, 1.027545, 1.015613, 1.013824, 1.01752, 1.0163, 1.018739, 1.01814, 1.022986, 1.020278, 1.020094, 1.022902, 1.028086, 1.024931, 1.024744, 1.025331, 1.024229, 1.027796, 1.026299, 1.025114, 1.026539, 1.029817, 1.043381, 1.045964, 1.042205, 1.044891, 1.043751, 1.039749, 1.043724, 1.04505, 1.045449, 1.050055, 1.052712, 1.056266, 1.060889, 1.064799, 1.072754, 1.078314, 1.088992, 1.100466, 1.118787, 1.118787, 1.100268, 1.105179, 1.100014, 1.10892, 1.102405, 1.107012, 1.107006, 1.118195, 1.122561, 1.123958, 1.12716, 1.120806, 1.123353, 1.126884, 1.129166, 1.131715, 1.131781, 1.138658, 1.137899, 1.143832, 1.142075, 1.138617, 1.141235, 1.141871, 1.131341, 1.129309, 1.11601, 1.113522, 1.116837, 1.126287, 1.12856, 1.132917, 1.130551, 1.124112, 1.118849, 1.127191, 1.1241, 1.129808, 1.153064, 1.158745, 1.158529, 1.15774, 1.159303, 1.161546, 1.171185, 1.174805, 1.182737, 1.174667, 1.169263, 1.1667, 1.166682, 1.163027, 1.165791, 1.169269, 1.169538, 1.16953, 1.170586, 1.172148, 1.170174, 1.166718, 1.166718, 1.166465, 1.163564, 1.165954, 1.167003, 1.168934, 1.167755, 1.168629, 1.174043, 1.175478, 1.177527, 1.180615, 1.181325, 1.182602, 1.185608, 1.184547, 1.18996, 1.18773, 1.202258, 1.207313, 1.21331, 1.223415, 1.227129, 1.229193, 1.230762, 1.235779, 1.226875, 1.22696, 1.235093, 1.235952, 1.237921, 1.237138, 1.232628, 1.235333, 1.232276, 1.219113, 1.233891, 1.239339, 1.246029, 1.252254, 1.24918, 1.247128, 1.242488, 1.245007, 1.245476, 1.259745, 1.259794, 1.267359, 1.272486, 1.270702, 1.261799, 1.261965, 1.259537, 1.261694, 1.265236, 1.270552, 1.27196, 1.27196, 1.270963, 1.273765, 1.235106, 1.234238, 1.241806, 1.256228, 1.26431, 1.271008, 1.271485, 1.276686, 1.281259, 1.28176, 1.290799, 1.304206, 1.285696, 1.286152, 1.286039, 1.282474, 1.284946, 1.284719, 1.284719, 1.288954, 1.282653, 1.27992, 1.273064, 1.26849, 1.267588, 1.249781, 1.256044, 1.259687, 1.261631, 1.277602, 1.275068, 1.272726, 1.270326, 1.265981, 1.265573, 1.265095, 1.26711, 1.284139, 1.286441, 1.289369, 1.29011, 1.290329, 1.29008, 1.294605, 1.296244, 1.296102, 1.297318, 1.294206, 1.292242, 1.285393, 1.284381, 1.288857, 1.2907, 1.296024, 1.294632, 1.292031, 1.291706, 1.291706, 1.291547, 1.293834, 1.290169, 1.286591, 1.292526, 1.284901, 1.289113, 1.291587, 1.294979, 1.297738, 1.297297, 1.297743, 1.299696, 1.304784, 1.307173, 1.315236, 1.308115, 1.304187, 1.305802, 1.302316, 1.300844, 1.296715, 1.3064, 1.312281, 1.314894, 1.317988, 1.318512, 1.318357, 1.316636, 1.316417, 1.32291, 1.319422, 1.3237, 1.32571, 1.324056, 1.326234, 1.325183, 1.330137, 1.340556, 1.341417, 1.336375, 1.341018, 1.344092, 1.358044, 1.35694, 1.359457, 1.353825, 1.362132, 1.36997, 1.377797, 1.378548, 1.382229, 1.386839, 1.386118, 1.395717, 1.397917, 1.385662, 1.387274, 1.398526, 1.401612, 1.411232, 1.408518, 1.40615, 1.417886, 1.428427, 1.434492, 1.419724, 1.428383, 1.430256, 1.447583, 1.448866, 1.459091, 1.447519, 1.464922, 1.438436, 1.434405, 1.435073, 1.437708, 1.419287, 1.42912, 1.424673, 1.427412, 1.445914, 1.439417, 1.437555, 1.4457, 1.445008, 1.453832, 1.457078, 1.457748, 1.467021, 1.456913, 1.447329, 1.438092, 1.442587, 1.439153, 1.426744, 1.431483, 1.439955, 1.439523, 1.438398, 1.442554, 1.442554, 1.445402, 1.440506, 1.440579, 1.449445, 1.447512, 1.440632, 1.442677, 1.441937, 1.451247, 1.446576, 1.431095, 1.439969, 1.438262, 1.445139, 1.451108, 1.455418, 1.457375, 1.458099, 1.462303, 1.453986, 1.452308, 1.447066, 1.447066, 1.457003, 1.45146, 1.449473, 1.458385, 1.472079, 1.47151, 1.479024, 1.474551, 1.473098, 1.475578, 1.477377, 1.48878, 1.488732, 1.502776, 1.505303, 1.510397, 1.52901, 1.542289, 1.511946, 1.511946, 1.534027, 1.548278, 1.536148, 1.529616, 1.550108, 1.549033, 1.553938, 1.552544, 1.543712, 1.552891, 1.55569, 1.549593, 1.554528, 1.554528, 1.533946, 1.511339, 1.512348, 1.518176, 1.510915, 1.522602, 1.523342, 1.519489, 1.510752, 1.509734, 1.504959, 1.507295, 1.479444, 1.461478, 1.4082, 1.433298, 1.453145, 1.43952, 1.444511, 1.445712, 1.444575, 1.465261, 1.465261, 1.464111, 1.465715, 1.498717, 1.489206, 1.494547, 1.489217, 1.498821, 1.502763, 1.517356, 1.513183, 1.519811, 1.518489, 1.517234, 1.505031, 1.503362, 1.505614, 1.49365, 1.50149, 1.500814, 1.512635, 1.527397, 1.525136, 1.525786, 1.523304, 1.528369, 1.52122, 1.502322, 1.495701, 1.501104, 1.496426, 1.485371, 1.494053, 1.498919, 1.501381, 1.488902, 1.482766, 1.485999];
+        const retHistory = [0.0, -0.29, 0.28, -0.03, 0.34, 0.31, -0.68, -0.59, -0.57, -0.49, -0.5, -0.39, -0.11, -0.06, -0.07, -0.9, -0.87, -0.76, -1.26, -0.86, -0.86, -0.95, -0.76, -0.74, -0.69, -1.12, -0.86, -0.79, -0.17, 0.2, -0.0, 0.36, 0.74, 0.78, -0.31, -0.24, -0.89, -0.68, -1.72, -1.25, -1.0, -1.06, 0.12, 3.09, 2.75, 1.56, 1.38, 1.75, 1.63, 1.87, 1.81, 2.3, 2.03, 2.01, 2.29, 2.81, 2.49, 2.47, 2.53, 2.42, 2.78, 2.63, 2.51, 2.65, 2.98, 4.34, 4.6, 4.22, 4.49, 4.38, 3.97, 4.37, 4.51, 4.54, 5.01, 5.27, 5.63, 6.09, 6.48, 7.28, 7.83, 8.9, 10.05, 11.88, 11.88, 10.03, 10.52, 10.0, 10.89, 10.24, 10.7, 10.7, 11.82, 12.26, 12.4, 12.72, 12.08, 12.34, 12.69, 12.92, 13.17, 13.18, 13.87, 13.79, 14.38, 14.21, 13.86, 14.12, 14.19, 13.13, 12.93, 11.6, 11.35, 11.68, 12.63, 12.86, 13.29, 13.06, 12.41, 11.88, 12.72, 12.41, 12.98, 15.31, 15.87, 15.85, 15.77, 15.93, 16.15, 17.12, 17.48, 18.27, 17.47, 16.93, 16.67, 16.67, 16.3, 16.58, 16.93, 16.95, 16.95, 17.06, 17.21, 17.02, 16.67, 16.67, 16.65, 16.36, 16.6, 16.7, 16.89, 16.78, 16.86, 17.4, 17.55, 17.75, 18.06, 18.13, 18.26, 18.56, 18.45, 19.0, 18.77, 20.23, 20.73, 21.33, 22.34, 22.71, 22.92, 23.08, 23.58, 22.69, 22.7, 23.51, 23.6, 23.79, 23.71, 23.26, 23.53, 23.23, 21.91, 23.39, 23.93, 24.6, 25.23, 24.92, 24.71, 24.25, 24.5, 24.55, 25.97, 25.98, 26.74, 27.25, 27.07, 26.18, 26.2, 25.95, 26.17, 26.52, 27.06, 27.2, 27.2, 27.1, 27.38, 23.51, 23.42, 24.18, 25.62, 26.43, 27.1, 27.15, 27.67, 28.13, 28.18, 29.08, 30.42, 28.57, 28.62, 28.6, 28.25, 28.49, 28.47, 28.47, 28.9, 28.27, 27.99, 27.31, 26.85, 26.76, 24.98, 25.6, 25.97, 26.16, 27.76, 27.51, 27.27, 27.03, 26.6, 26.56, 26.51, 26.71, 28.41, 28.64, 28.94, 29.01, 29.03, 29.01, 29.46, 29.62, 29.61, 29.73, 29.42, 29.22, 28.54, 28.44, 28.89, 29.07, 29.6, 29.46, 29.2, 29.17, 29.17, 29.15, 29.38, 29.02, 28.66, 29.25, 28.49, 28.91, 29.16, 29.5, 29.77, 29.73, 29.77, 29.97, 30.48, 30.72, 31.52, 30.81, 30.42, 30.58, 30.23, 30.08, 29.67, 30.64, 31.23, 31.49, 31.8, 31.85, 31.84, 31.66, 31.64, 32.29, 31.94, 32.37, 32.57, 32.41, 32.62, 32.52, 33.01, 34.06, 34.14, 33.64, 34.1, 34.41, 35.8, 35.69, 35.95, 35.38, 36.21, 37.0, 37.78, 37.85, 38.22, 38.68, 38.61, 39.57, 39.79, 38.57, 38.73, 39.85, 40.16, 41.12, 40.85, 40.61, 41.79, 42.84, 43.45, 41.97, 42.84, 43.03, 44.76, 44.89, 45.91, 44.75, 46.49, 43.84, 43.44, 43.51, 43.77, 41.93, 42.91, 42.47, 42.74, 44.59, 43.94, 43.76, 44.57, 44.5, 45.38, 45.71, 45.77, 46.7, 45.69, 44.73, 43.81, 44.26, 43.92, 42.67, 43.15, 44.0, 43.95, 43.84, 44.26, 44.26, 44.54, 44.05, 44.06, 44.94, 44.75, 44.06, 44.27, 44.19, 45.12, 44.66, 43.11, 44.0, 43.83, 44.51, 45.11, 45.54, 45.74, 45.81, 46.23, 45.4, 45.23, 44.71, 44.71, 45.7, 45.15, 44.95, 45.84, 47.21, 47.15, 47.9, 47.46, 47.31, 47.56, 47.74, 48.88, 48.87, 50.28, 50.53, 51.04, 52.9, 54.23, 51.19, 51.19, 53.4, 54.83, 53.61, 52.96, 55.01, 54.9, 55.39, 55.25, 54.37, 55.29, 55.57, 54.96, 55.45, 55.45, 53.39, 51.13, 51.23, 51.82, 51.09, 52.26, 52.33, 51.95, 51.08, 50.97, 50.5, 50.73, 47.94, 46.15, 40.82, 43.33, 45.31, 43.95, 44.45, 44.57, 44.46, 46.53, 46.53, 46.41, 46.57, 49.87, 48.92, 49.45, 48.92, 49.88, 50.28, 51.74, 51.32, 51.98, 51.85, 51.72, 50.5, 50.34, 50.56, 49.37, 50.15, 50.08, 51.26, 52.74, 52.51, 52.58, 52.33, 52.84, 52.12, 50.23, 49.57, 50.11, 49.64, 48.54, 49.41, 49.89, 50.14, 48.89, 48.28, 48.6];
+
+        const chartMay = echarts.init(document.getElementById('chartMay'));
+        chartMay.setOption({
+            tooltip: { trigger: 'axis', formatter: function(params) {
+                let res = params[0].name + '<br/>';
+                params.forEach(item => {
+                    if (item.seriesName === '净值') res += item.marker + item.seriesName + ': ' + item.value.toFixed(4) + '<br/>';
+                    else res += item.marker + item.seriesName + ': ' + item.value.toFixed(2) + '%<br/>';
+                });
+                return res;
+            } },
+            legend: { data: ['净值', '滚动回撤'], bottom: 0 },
+            grid: { left: '4%', right: '6%', bottom: '12%', top: '18%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: datesMay },
+            yAxis: [
+                { type: 'value', name: '净值', min: 1.47, max: 1.54, scale: true, nameGap: 12, axisLabel: { formatter: '{value}' } },
+                { type: 'value', name: '回撤', min: -4, max: 1, axisLabel: { formatter: '{value} %' }, splitLine: { show: false } }
+            ],
+            series: [
+                {
+                    name: '净值', type: 'line', data: navMay, smooth: true, symbol: 'none',
+                    lineStyle: { width: 3, color: '#1a365d' },
+                    areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(26,54,93,0.25)'},{offset:1,color:'rgba(26,54,93,0.04)'}]) },
+                    markPoint: {
+                        symbolSize: 48,
+                        label: { position: 'top', distance: 6, fontSize: 12 },
+                        data: [
+                            { name: '阶段高点', coord: ['05/13', 1.5284], value: '05/13 高点' },
+                            { name: '回撤低点', coord: ['05/28', 1.4828], value: '05/28 回撤低点' }
+                        ]
+                    }
+                },
+                { name: '滚动回撤', type: 'line', yAxisIndex: 1, data: ddMay, smooth: true, symbol: 'none', lineStyle: { width: 2, color: '#2ca02c', type: 'dashed' } }
+            ]
+        });
+
+        const chartContribution = echarts.init(document.getElementById('chartContribution'));
+        chartContribution.setOption({
+            tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function(params) {
+                return params[0].name + '<br/>' + params[0].marker + '估算贡献: ' + (params[0].value > 0 ? '+' : '') + params[0].value.toFixed(2) + '%';
+            } },
+            grid: { left: '4%', right: '4%', bottom: '12%', top: '8%', containLabel: true },
+            xAxis: { type: 'category', data: contribNames },
+            yAxis: { type: 'value', axisLabel: { formatter: '{value} %' } },
+            series: [{
+                name: '估算贡献', type: 'bar', data: contribValues,
+                itemStyle: { color: function(params) { return params.data >= 0 ? '#d62728' : '#2ca02c'; } },
+                label: { show: true, position: 'top', formatter: function(p) { return (p.value > 0 ? '+' : '') + p.value.toFixed(2) + '%'; } }
+            }]
+        });
+
+        const chartMonthly = echarts.init(document.getElementById('chartMonthly'));
+        chartMonthly.setOption({
+            tooltip: { trigger: 'axis', formatter: function(params) {
+                return params[0].name + '<br/>' + params[0].marker + '月度收益率: ' + (params[0].value > 0 ? '+' : '') + params[0].value.toFixed(2) + '%';
+            } },
+            grid: { left: '4%', right: '4%', bottom: '10%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', data: monthlyLabels },
+            yAxis: { type: 'value', axisLabel: { formatter: '{value} %' } },
+            series: [{
+                name: '月度收益率', type: 'bar', data: monthlyValues,
+                itemStyle: { color: function(params) { return params.data >= 0 ? '#d62728' : '#2ca02c'; } },
+                label: { show: true, position: 'top', formatter: function(p) { return (p.value > 0 ? '+' : '') + p.value.toFixed(2) + '%'; } }
+            }]
+        });
+
+        const chartHistory = echarts.init(document.getElementById('chartHistory'));
+        chartHistory.setOption({
+            tooltip: { trigger: 'axis', formatter: function(params) {
+                let res = params[0].name + '<br/>';
+                res += params[0].marker + '累计净值: ' + params[0].value.toFixed(4) + '<br/>';
+                res += params[1].marker + '累计收益率: ' + params[1].value.toFixed(2) + '%';
+                return res;
+            } },
+            legend: { data: ['累计净值', '累计收益率(%)'], bottom: 0 },
+            grid: { left: '4%', right: '5%', bottom: '12%', top: '8%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: datesHistory, axisLabel: { formatter: function(value) { return value.substring(0, 7); } } },
+            yAxis: [
+                { type: 'value', name: '净值', min: 'dataMin', scale: true, axisLabel: { formatter: '{value}' } },
+                { type: 'value', name: '收益率', scale: true, axisLabel: { formatter: '{value} %' }, splitLine: { show: false } }
+            ],
+            dataZoom: [{ type: 'inside', start: 0, end: 100 }, { start: 0, end: 100, height: 15, bottom: '5%' }],
+            series: [
+                {
+                    name: '累计净值', type: 'line', data: navHistory, smooth: true, symbol: 'none',
+                    lineStyle: { width: 3, color: '#1a365d' }, itemStyle: { color: '#1a365d' },
+                    areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(26,54,93,0.28)'},{offset:1,color:'rgba(26,54,93,0.05)'}]) }
+                },
+                { name: '累计收益率(%)', type: 'line', yAxisIndex: 1, data: retHistory, smooth: true, symbol: 'none', lineStyle: { width: 2, color: '#d62728', type: 'dashed' }, itemStyle: { color: '#d62728' } }
+            ]
+        });
+
+        window.addEventListener('resize', function() {
+            chartMay.resize(); chartContribution.resize(); chartMonthly.resize(); chartHistory.resize();
+        });
+    </script>
+</body>
+</html>
